@@ -66,17 +66,17 @@ blueprint:
 mode: restart
 max_exceeded: silent
 variables:
-  first_light: !input first_light
-  second_light: !input second_light
-  third_light: !input third_light
-  forth_light: !input forth_light
-  current_light: !input current_light
-  dim_scale: !input dim_scale
+  first_light: !input "first_light"
+  second_light: !input "second_light"
+  third_light: !input "third_light"
+  forth_light: !input "forth_light"
+  current_light: !input "current_light"
+  dim_scale: !input "dim_scale"
   lights:
-    first_light: !input first_light
-    second_light: !input second_light
-    third_light: !input third_light
-    forth_light: !input forth_light
+    first_light: !input "first_light"
+    second_light: !input "second_light"
+    third_light: !input "third_light"
+    forth_light: !input "forth_light"
 trigger:
 - platform: event
   event_type: zha_event
@@ -96,7 +96,7 @@ action:
     - '{{ scene == 1 }}'
     sequence:
       - choose:
-        - conditions: '{{ states(first_light.entity) == ''off'' }}'
+        - conditions: '{{ states(first_light.entity_id) == ''off'' }}'
           sequence:
           - service: light.turn_on
             target: '{{ first_light }}'
@@ -123,7 +123,7 @@ action:
     - '{{ scene == 0 }}'
     sequence:
       - choose:
-        - conditions: '{{ states(second_light.entity) == ''off'' }}'
+        - conditions: '{{ states(second_light.entity_id) == ''off'' }}'
           sequence:
           - service: light.turn_on
             target: '{{ second_light }}'
@@ -150,7 +150,7 @@ action:
     - '{{ scene == 5 }}'
     sequence:
       - choose:
-        - conditions: '{{ states(third_light.entity) == ''off'' }}'
+        - conditions: '{{ states(third_light.entity_id) == ''off'' }}'
           sequence:
           - service: light.turn_on
             target: '{{ third_light }}'
@@ -177,7 +177,7 @@ action:
     - '{{ scene == 4 }}'
     sequence:
       - choose:
-        - conditions: '{{ states(forth_light.entity) == ''off'' }}'
+        - conditions: '{{ states(forth_light.entity_id) == ''off'' }}'
           sequence:
           - service: light.turn_on
             target: '{{ forth_light }}'
