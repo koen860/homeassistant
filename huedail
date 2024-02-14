@@ -84,12 +84,12 @@ trigger:
     device_id: !input remote
 action:
 - variables:
-    command: '{{ trigger.event.data.command }}'
-    args: '{{ trigger.event.data.args }}'
-    params: '{{ trigger.event.data.params }}'
-    scene: '{{ trigger.event.data.params.scene_id }}'
-    step_mode: '{{ trigger.event.data.params.step_mode }}'
-    step_size: '{{ trigger.event.data.params.step_size }}'
+    command: "{{ trigger.event.data.command }}"
+    args: "{{ trigger.event.data.args }}"
+    params: "{{ trigger.event.data.params }}"
+    scene: "{{ trigger.event.data.params.scene_id }}"
+    step_mode: "{{ trigger.event.data.params.step_mode }}"
+    step_size: "{{ trigger.event.data.params.step_size }}"
 - choose:
   - conditions:
     - '{{ command == ''recall'' }}'
