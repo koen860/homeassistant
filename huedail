@@ -102,6 +102,7 @@ action:
             target: '{{ first_light }}'
             data:
               transition: 1
+              brightness: 50
         default:
           - choose:
             - conditions: '{{ states(current_light) == ''first_light'' }}'
@@ -128,6 +129,7 @@ action:
             target: '{{ second_light }}'
             data:
               transition: 1
+              brightness: 50
         default:
           - choose:
             - conditions: '{{ states(current_light) == ''second_light'' }}'
@@ -154,6 +156,7 @@ action:
             target: '{{ third_light }}'
             data:
               transition: 1
+              brightness: 50
         default:
           - choose:
             - conditions: '{{ states(current_light) == ''third_light'' }}'
@@ -180,6 +183,7 @@ action:
             target: '{{ forth_light }}'
             data:
               transition: 1
+              brightness: 50
         default:
           - choose:
             - conditions: '{{ states(current_light) == ''forth_light'' }}'
