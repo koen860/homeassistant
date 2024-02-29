@@ -199,7 +199,7 @@ action:
             data:
               value: '{{ ''forth_light'' }}'
   - conditions:
-    - '{{ command == ''step_with_on_off'' }}'
+    - '{{ command == ''step'' }}'
     - '{{ step_mode == ''StepMode.Up'' }}'
     sequence:
     - choose:
@@ -217,7 +217,7 @@ action:
           brightness_step_pct: '{{ step_size * dim_scale }}'
           transition: 1
   - conditions:
-    - '{{ command == ''step_with_on_off'' }}'
+    - '{{ command == ''step'' }}'
     - '{{ step_mode == ''StepMode.Down'' }}'
     sequence:
     - choose:
